@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const settingsAPI = axios.create({
-  baseURL: "http://localhost:4000/api/admin/settings",
+  baseURL: "hcm-management-system-backend-hackathon-2026-prqcicu16.vercel.app/api/admin/settings",
 });
 
 settingsAPI.interceptors.request.use((config) => {

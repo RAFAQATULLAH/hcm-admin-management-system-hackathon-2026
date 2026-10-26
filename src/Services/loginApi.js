@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const loginAPI = axios.create({
- baseURL: "http://localhost:4000/api/admin-auth",
+ baseURL: "hcm-management-system-backend-hackathon-2026-prqcicu16.vercel.app/api/admin-auth",
 });
 
 loginAPI.interceptors.request.use((config) => {

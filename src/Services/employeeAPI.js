@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const employeeAPI = axios.create({
-  baseURL: "http://localhost:4000/api/admin/employees",
+  baseURL: "hcm-management-system-backend-hackathon-2026-prqcicu16.vercel.app/api/admin/employees",
 });
 
 employeeAPI.interceptors.request.use((config) => {
