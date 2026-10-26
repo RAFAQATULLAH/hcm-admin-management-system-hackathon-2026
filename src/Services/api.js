@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "hcm-management-system-backend-hackathon-2026-prqcicu16.vercel.app/api/admin-auth",
+  baseURL: "https://hcm-management-system-backend-hacka.vercel.app/api/admin-auth",
 });
 
 API.interceptors.request.use((config) => {
