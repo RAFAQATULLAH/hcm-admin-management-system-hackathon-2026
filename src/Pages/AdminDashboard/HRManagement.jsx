@@ -8,7 +8,6 @@ import {
   UserX,
   Mail,
   X,
-  ShieldCheck,
   MoreHorizontal,
   RefreshCw,
   Copy,

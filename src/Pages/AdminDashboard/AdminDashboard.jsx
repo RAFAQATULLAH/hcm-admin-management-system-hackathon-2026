@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate , Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
-  LayoutDashboard,
   Users,
   UserCog,
   UserRound,
   Settings,
   ShieldCheck,
-  LogOut,
   Bell,
   Search,
   ArrowUpRight,
@@ -68,11 +66,6 @@ export default function AdminDashboard() {
     loadDashboard();
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("adminToken");
-    localStorage.removeItem("adminUser");
-    navigate("/login", { replace: true });
-  };
 
   const stats = [
     {
@@ -120,69 +113,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-800">
-      <div className="flex min-h-screen">
-        {/* Sidebar */}
-        <aside className="hidden w-64 shrink-0 flex-col bg-slate-950 text-white md:flex">
-          <div className="flex items-center gap-3 border-b border-white/10 px-6 py-7">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-600">
-              <ShieldCheck size={25} />
-            </div>
-
-            <div>
-              <h1 className="text-lg font-bold">HCM Lite</h1>
-              <p className="text-xs text-slate-400">
-                Admin Portal
-              </p>
-            </div>
-          </div>
-
-          <nav className="flex-1 space-y-2 px-4 py-6">
-            <button
-              onClick={() => navigate("/dashboard")}
-              className="flex w-full items-center gap-3 rounded-xl bg-indigo-600 px-4 py-3 text-left font-medium"
-            >
-              <LayoutDashboard size={20} />
-              Dashboard
-            </button>
-
-            <button
-  onClick={() => navigate("/hr")}
-  className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-slate-300 transition hover:bg-white/10 hover:text-white"
->
-  <UserCog size={20} />
-  HR Management
-</button>
-
-            <button
-              onClick={() => navigate("/employees")}
-              className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-slate-300 transition hover:bg-white/10 hover:text-white"
-            >
-              <Users size={20} />
-              Employees
-            </button>
-
-            <button
-              onClick={() => navigate("/settings")}
-              className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-slate-300 transition hover:bg-white/10 hover:text-white"
-            >
-              <Settings size={20} />
-              Settings
-            </button>
-          </nav>
-
-          <div className="border-t border-white/10 p-4">
-            <button
-              onClick={handleLogout}
-              className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-slate-300 transition hover:bg-red-500/10 hover:text-red-400"
-            >
-              <LogOut size={20} />
-              Logout
-            </button>
-          </div>
-        </aside>
-
-        {/* Main content */}
-        <main className="min-w-0 flex-1">
           {/* Top navbar */}
           <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white px-5 py-5 sm:px-8">
             <div>
@@ -464,8 +394,6 @@ export default function AdminDashboard() {
               HCM Lite Admin Portal · Secure account management
             </p>
           </div>
-        </main>
-      </div>
     </div>
   );
 }

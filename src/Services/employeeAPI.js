@@ -1,7 +1,11 @@
 import axios from "axios";
 
 const employeeAPI = axios.create({
-  baseURL: "https://hcm-management-system-backend-hacka.vercel.app/api/admin/employees",
+  baseURL: `${
+    import.meta.env.DEV
+      ? "http://localhost:4000"
+      : "https://hcm-management-system-backend-hacka.vercel.app"
+  }/api/admin/employees`,
 });
 
 employeeAPI.interceptors.request.use((config) => {
